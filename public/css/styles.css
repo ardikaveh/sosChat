@@ -1,0 +1,129 @@
+* { margin: 0; padding: 0; border: 0; }
+
+html, body {
+	background: url('../assets/grey.png') #f2f2f2;
+	color: #666;
+	font: 14px/18px 'Lato', Arial, sans-serif;
+	width: 100%;
+	overflow-y: hidden;
+	height: 100vh;	
+}
+
+header {
+	text-align: center;
+	line-height: 32px;
+}
+
+h1 {
+	font-size: 30px;
+	font-weight: 400;
+}
+
+.description {
+	font-weight: 300;
+}
+
+.wrapper {
+	max-width: 800px;
+	margin: auto;
+}
+
+.app {
+	background: rgba(230, 230, 230, 0.45);
+	text-align: center;
+	color: #999;
+	font-size: 24px;
+	font-weight: 300;
+	position: relative;
+}
+
+#map {
+	width: 100%;
+	height: 500px;
+	background: transparent;
+}
+
+.infobox {
+	background: #FFF;
+	padding: 40px;
+	line-height: 26px;
+	text-align: center;
+	position: absolute;
+	top: 150px;
+	left: 175px;
+	z-index: 10000;
+	visibility: hidden;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	box-shadow: 0 0 4px 0 #AAAAAA;
+
+	-webkit-transition: opacity .2s ease-out;
+	-moz-transition: opacity .2s ease-out;
+	transition: opacity .2s ease-out;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.me {
+	color:#35759E;
+	font-weight: normal;
+	font-size: 16px;
+	text-align: right;
+	padding-top: 4px;
+	padding-right: 4px;
+	font-family: 'Helvetica Neue', 'Lato', Arial, sans-serif;
+}
+
+.you {
+	color:#2C3E50;
+	font-weight: normal;
+	font-size: 16px;
+	padding-top: 4px;
+	padding-left: 4px;
+	font-family: 'Helvetica Neue', 'Lato', Arial, sans-serif;
+}
+
+#chatinput{
+	width:100%;
+	height: 30px;
+	font-size: 16px;
+	text-align: left;
+	background-color: white;
+	color: #2980B9;
+	border-bottom: solid 1px #ccc;
+	border-top: solid 1px #ddd;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	outline: none;
+	font-weight: normal;
+	text-indent: 4px;
+	font-family: 'Helvetica Neue', 'Lato', Arial, sans-serif;
+}
+
+#chatoutput{
+	width:100%;
+	height: 150px;
+	font-size: 14px;
+	background-color: whitesmoke;
+	color: #111;
+	overflow-y:scroll;
+	text-align: left;
+	padding: 2px 0px;
+}
+
+.infobox.error {
+	opacity: .9;
+	filter: alpha(opacity=90);
+	visibility: visible;
+}
+
+/* custom popup fonts */
+.leaflet-popup-content {
+	font: 12px 'Lato', Arial, sans-serif !important;
+}
+.leaflet-control-attribution.leaflet-control {
+	display: none;
+}
