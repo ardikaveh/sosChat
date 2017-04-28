@@ -137,8 +137,9 @@ $(function() {
 				}	
 				$(this).val("")
 				$("#chatoutput").append("<div class='me'>" + chat + "</div>");
-				$('#chatoutput').scrollTop($('#chatoutput')[0].scrollHeight);
-				$('#chatoutput').height("150px");
+				setTimeout(function(){
+					$('#chatoutput').scrollTop($('#chatoutput')[0].scrollHeight)
+				}, 300);
 			}
 			
 		}); 
