@@ -2,7 +2,7 @@ var http = require('http');
 var Static = require('node-static');
 var app = http.createServer(handler);
 var io = require('socket.io').listen(app);
-var port = 8080;
+var port = process.env.PORT || 8080;
 
 var files = new Static.Server('./public');
 
