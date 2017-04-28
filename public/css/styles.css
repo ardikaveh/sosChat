@@ -1,12 +1,19 @@
 * { margin: 0; padding: 0; border: 0; }
 
 html, body {
-	background: url('../assets/grey.png') #f2f2f2;
-	color: #666;
-	font: 14px/18px 'Lato', Arial, sans-serif;
+	font: 14px/18px Arial, sans-serif;
 	width: 100%;
 	overflow-y: hidden;
 	height: 100vh;	
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map {
+    height: 100vh;
+    width: 100vw;
 }
 
 header {
@@ -37,9 +44,6 @@ h1 {
 	position: relative;
 }
 
-#map {
-
-}
 
 .infobox {
 	background: #FFF;
