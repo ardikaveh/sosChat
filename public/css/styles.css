@@ -16,6 +16,10 @@ html, body, #map {
     width: 100vw;
 }
 
+#map { 
+	width: 100%;
+}
+
 header {
 	text-align: center;
 	line-height: 32px;
