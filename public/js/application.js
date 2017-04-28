@@ -69,15 +69,6 @@ $(function() {
 		$('.map').text('Your browser is out of fashion, there\'s no geolocation!');
 	}
 
-	function onLocationFound(e) {
-	    var radius = e.accuracy / 2;
-
-	    L.marker(e.latlng).addTo(map)
-	        .bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-	    L.circle(e.latlng, radius).addTo(map);
-	}
-
 	function positionSuccess(position) {
 		var lat = position.coords.latitude;
 		var lng = position.coords.longitude;
@@ -94,12 +85,15 @@ $(function() {
 		map = L.map('map').fitWorld();
 		
 
-		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { minZoom: 5, maxZoom: 20, detectRetina: true }).addTo(map);
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', 
+			{ 
+				minZoom: 5, 
+				maxZoom: 20, 
+				detectRetina: true, 
+				id: 'mapbox.emerald', 
+				accessToken: 'pk.eyJ1IjoiYWthdmVoIiwiYSI6ImNqMjFodHBsZDAwMzYzM3F0Nm0xbm56NHIifQ.iNXd2gId2Fx0hga8NPJ0iw'
+			}).addTo(map);
 
-		map.locate({setView: true, maxZoom: 16});
-
-
-		map.on('locationfound', onLocationFound);
 
 
 		// set map bounds
