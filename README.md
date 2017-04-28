@@ -1,4 +1,4 @@
 # SosChat
 Socket.io node.js real time chat app
 
-Live Demo: http://52.8.11.66
+Live Demo: https://soschat.herokuapp.com/

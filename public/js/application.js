@@ -21,6 +21,11 @@ $(function() {
 		window.scrollTo(0, 0);
 	})
 
+	$('#map').on('click', function(e){ 
+		e.preventDefault();
+		return false; 
+	});
+
 	// custom marker's icon styles
 	var tinyIcon = L.Icon.extend({
 		options: {
@@ -79,12 +84,15 @@ $(function() {
 		// load leaflet map
 		map = L.map('map');
 
-		L.tileLayer('https://{s}.tiles.mapbox.com/v3/examples.map-i87786ca/{z}/{x}/{y}.png', { minZoom: 5, maxZoom: 20, detectRetina: true }).addTo(map);
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { minZoom: 5, maxZoom: 20, detectRetina: true }).addTo(map);
 
 		// set map bounds
 		map.fitWorld();
 		userMarker.addTo(map);
 		userMarker.bindPopup('<p>You are there! Your ID is ' + userId + '</p>').openPopup();
+
+
+
 
 		var emit = $.now();
 		// send coords on when user is active
@@ -130,6 +138,7 @@ $(function() {
 				$(this).val("")
 				$("#chatoutput").append("<div class='me'>" + chat + "</div>");
 				$('#chatoutput').scrollTop($('#chatoutput')[0].scrollHeight);
+				$('#chatoutput').height("150px");
 			}
 			
 		}); 
@@ -179,7 +188,7 @@ $(function() {
 	}
 
 	setTimeout(function() {
-    	$('#header').fadeOut('slow');
+    	$('#header').slideUp('slow');
 
 	}, 4000);
 
