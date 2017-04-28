@@ -19,6 +19,9 @@ html, body, #map {
 header {
 	text-align: center;
 	line-height: 32px;
+	padding-top: 10px;
+	background-color: whitesmoke;
+	opacity: .5;
 }
 
 h1 {

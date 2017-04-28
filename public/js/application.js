@@ -91,7 +91,7 @@ $(function() {
 				maxZoom: 20, 
 				detectRetina: true, 
 				id: 'mapbox.emerald', 
-				accessToken: 'pk.eyJ1IjoiYWthdmVoIiwiYSI6ImNqMjFodHBsZDAwMzYzM3F0Nm0xbm56NHIifQ.iNXd2gId2Fx0hga8NPJ0iw'
+				accessToken: 'pk.eyJ1IjoiYWthdmVoIiwiYSI6ImNqMjFodDZtajAwM3kzM283amx1NWtxODIifQ.KS1ukES6F405sAj92VwUlw'
 			}).addTo(map);
 
 
