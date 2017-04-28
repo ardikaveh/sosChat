@@ -69,6 +69,15 @@ $(function() {
 		$('.map').text('Your browser is out of fashion, there\'s no geolocation!');
 	}
 
+	function onLocationFound(e) {
+	    var radius = e.accuracy / 2;
+
+	    L.marker(e.latlng).addTo(map)
+	        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+	    L.circle(e.latlng, radius).addTo(map);
+	}
+
 	function positionSuccess(position) {
 		var lat = position.coords.latitude;
 		var lng = position.coords.longitude;
@@ -82,12 +91,18 @@ $(function() {
 		// userMarker = L.marker([51.45, 30.050], { icon: redIcon });
 
 		// load leaflet map
-		map = L.map('map');
+		map = L.map('map').fitWorld();
+		
 
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { minZoom: 5, maxZoom: 20, detectRetina: true }).addTo(map);
 
+		map.locate({setView: true, maxZoom: 16});
+
+
+		map.on('locationfound', onLocationFound);
+
+
 		// set map bounds
-		map.fitWorld();
 		userMarker.addTo(map);
 		userMarker.bindPopup('<p>You are there! Your ID is ' + userId + '</p>').openPopup();
 
